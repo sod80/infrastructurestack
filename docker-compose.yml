@@ -1,0 +1,10 @@
+elk:
+  image: sebp/elk
+  ports:
+    - "5601:5601"
+    - "9200:9200"
+    - "5044:5044"
+
+
+# /usr/local/bin/elk-pre-hooks.sh
+# /usr/local/bin/elk-post-hooks.sh

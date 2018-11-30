@@ -12,6 +12,19 @@ The following command was executed within the project directory to create the do
     
     docker run -v $PWD/config:/etc/logstash/conf.d/ -v $PWD/pipeline/pipelines.yml:/opt/logstash/config/pipelines.yml -v $PWD/data/mysql-connector-java-5.1.47-bin.jar:/home/mysql-connector-java-5.1.47-bin.jar -p 5601:5601 -p 9200:9200 -p 5044:5044 -it sebp/elk
 
+To read from the local instance of the mysql database, the input filter in the logstash configuration file will have to point to the IP 
+address of the Docker gateway on the local environment.
+    
+    jdbc_connection_string => "jdbc:mysql://*10.0.75.1*:3306/flifo"
+
+The find this IP address run the "ipconfig" command in powershell or relevant command prompt.
+
+    Ethernet adapter vEthernet (DockerNAT):
+
+    Connection-specific DNS Suffix  . :
+    IPv4 Address. . . . . . . . . . . : 10.0.75.1
+    Subnet Mask . . . . . . . . . . . : 255.255.255.0
+    Default Gateway . . . . . . . . . :
 
 ## ID based last run configuration
 

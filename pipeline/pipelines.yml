@@ -1,0 +1,4 @@
+- pipeline.id: dots_flifo_pipeline
+  path.config: "/etc/logstash/conf.d/dots_jdbc_flifo.conf"
+- pipeline.id: datalake_flifo_pipeline
+  path.config: "/etc/logstash/conf.d/datalake_jdbc_flifo.conf"
